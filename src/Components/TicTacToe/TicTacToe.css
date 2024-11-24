@@ -1,0 +1,104 @@
+.container {
+    text-align: center;
+    position: relative; /* To position the GIF over the entire container */
+}
+
+.title {
+    margin-top: 50px;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title span {
+    color: #26ffcb;
+    padding-left: 15px;
+}
+.title img{
+    padding: 15px 15px;
+    width: 80px;
+    height: 80px;
+}
+
+.reset {
+    width: 250px;
+    height: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #1f3540;
+    font-size: 26px;
+    color: #26ffcb;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    transition: background 0.3s;
+}
+
+.reset:hover {
+    background: #26ffcb;
+    color: #1f3540;
+}
+
+.board {
+    height: 600px;
+    width: 564px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    position: relative; /* Necessary for layering the GIF */
+}
+
+.boxes {
+    display: flex;
+    height: 180px;
+    width: 180px;
+    background: #1f3540;
+    border: 4px solid #0f1b21;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes:hover {
+    background: #9adac4;
+    transition: background 0.3s ease;
+}
+
+/* GIF container to overlay the board */
+.gif-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 564px; /* Matches the width of the board */
+    height: 600px; /* Matches the height of the board */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a slight overlay effect */
+    z-index: 10; /* Ensure it appears above the board */
+    border-radius: 12px; /* Optional: matches the boxes' rounded corners */
+}
+
+.gif-container.visible {
+    display: flex; /* Make it visible when the game is won */
+}
+
+.congrats-gif {
+    width: 100%; /* Stretch to match the .gif-container width */
+    height: 100%; /* Stretch to match the .gif-container height */
+    object-fit: cover; /* Ensures the GIF fills the container while maintaining its aspect ratio */
+    border-radius: 20px; /* Optional: matches the boxes' rounded corners */
+}
+
+.congrats {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
